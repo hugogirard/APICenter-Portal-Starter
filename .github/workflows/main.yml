@@ -1,0 +1,29 @@
+name: Create Static WebApp
+
+on:
+  workflow_dispatch:
+
+env:
+ RG_NAME: 'rg-apim-demo'
+ LOCATION: 'eastus'
+ SWA_NAME: 'api-center-portal-hg98'
+
+jobs:
+  create-static-web-app:
+
+     runs-on: ubuntu-latest
+
+     steps:
+
+        - name: Login via Azure CLI
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+        - name: Create Resource Group
+          run: |
+            az group create -n ${{ env.RG_NAME }} -l ${{ env.LOCATION }}
+          
+        - name: Create Static Web App
+          run: |
+            az staticwebapp create --name ${{ env.SWA_NAME }} --resource-group ${{ env.RG_NAME }} --location ${{ env.LOCATION }} --sku Standard            
