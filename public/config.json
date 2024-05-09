@@ -1,9 +1,9 @@
 {
-  "dataApiHostName": "<service name>.data.<region>.azure-apicenter.ms/workspaces/default",
+  "dataApiHostName": "__APICENTERHOSTNAME__/workspaces/default",
   "title": "API portal",
   "authentication": {
-      "clientId": "<client ID>",
-      "tenantId": "<tenant ID>",
+      "clientId": "__ClientID__",
+      "tenantId": "__TenantID__",
       "scopes": ["https://azure-apicenter.net/user_impersonation"],
       "authority": "https://login.microsoftonline.com/"
   }
