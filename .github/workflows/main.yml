@@ -5,7 +5,7 @@ on:
 
 env:
  RG_NAME: 'rg-apim-demo'
- LOCATION: 'eastus'
+ LOCATION: 'centralus'
  SWA_NAME: 'api-center-portal-hg98'
 
 jobs:
