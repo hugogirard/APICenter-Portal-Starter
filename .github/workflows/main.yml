@@ -19,10 +19,6 @@ jobs:
           uses: azure/login@v1
           with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-        - name: Create Resource Group
-          run: |
-            az group create -n ${{ env.RG_NAME }} -l ${{ env.LOCATION }}
           
         - name: Create Static Web App
           run: |
