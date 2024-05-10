@@ -1,5 +1,5 @@
 {
-  "dataApiHostName": "__APICENTERHOSTNAME__/workspaces/default",
+  "dataApiHostName": "__APICENTERHOSTNAME__",
   "title": "API portal",
   "authentication": {
       "clientId": "__ClientID__",
