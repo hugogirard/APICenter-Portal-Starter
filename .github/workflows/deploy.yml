@@ -13,6 +13,18 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      - uses: cschleiden/replace-tokens@v1
+        name: Replace Config Settings
+        with:
+          tokenPrefix: '__'
+          tokenSuffix: '__'
+          files: '["public/config.json"]'
+        env:
+          APICENTERHOSTNAME: ${{ secrets.API_CENTER_HOSTNAME }}
+          ClientID: ${{ secrets.CLIENT_ID }}
+          TenantID: ${{ secrets.TENANT_ID }}
+          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
